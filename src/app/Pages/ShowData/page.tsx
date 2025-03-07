@@ -32,17 +32,18 @@ const BuySell = () => {
     }, []);
 
     return (
-        <div>
+        <div className="text-black">
             <h1>Data from Supabase</h1>
             {loading ? (
                 <p>Loading...</p>
             ) : (
                 <ul>
                     {data.map((item) => (
-                        <li key={item.id} className="border p-2 mb-2">
-                            <p>{item.nama} {item.usia}</p>
-                            
-                            <Image src="/assets/random.jpg" alt="Example" width={150} height={150} />
+                        <li key={item.id} className="border w-auto p-2 my-4">
+                            <div>
+                                {item.nama}{item.usia}
+                                <Image src="/assets/random.jpg" alt="Example" width={150} height={150} />
+                            </div>
                         </li>
                         
                     ))}

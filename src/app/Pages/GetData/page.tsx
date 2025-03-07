@@ -24,7 +24,7 @@ const Landing = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit} className="form_input">
+        <form onSubmit={handleSubmit} className="form_input text-black">
             <div>Input Nama</div>
             <input
                 type="text"
