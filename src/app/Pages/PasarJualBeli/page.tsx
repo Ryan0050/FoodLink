@@ -7,7 +7,7 @@ const PasarJualBeli = () => {
         <div>
             <Header/>
             <div className="text-black">
-                produk produk
+                Produk-Produk
             </div>
         </div>
     );
