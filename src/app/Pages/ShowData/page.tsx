@@ -1,12 +1,12 @@
-"use client"; // Required for Next.js App Router
+"use client"; 
 
 import { useState, useEffect } from "react";
-import { supabase } from "@/lib/supabase"; // Ensure this path is correct
+import { supabase } from "@/lib/supabase"; 
 import Image from "next/image";
 
 interface Item {
     id: number;
-    nama: string; // Adjust according to your table structure
+    nama: string; 
     usia: number;
 }
 

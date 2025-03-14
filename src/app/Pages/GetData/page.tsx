@@ -41,7 +41,7 @@ const Landing = () => {
                 id="usia"
                 value={usia}
                 onChange={(e) => setUsia(e.target.value)}
-                className="bg-white text-black"
+                className="bg-white text-black" 
             />
             <button type="submit" className="bg-blue-500 text-white p-2 mt-2">Submit</button>
         </form>
