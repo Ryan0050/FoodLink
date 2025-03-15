@@ -40,26 +40,22 @@ const PasarJualBeli = () => {
     }, []);
 
     useEffect(() => {
-        const fetchUserRole = async () => {
-            const { data: { user } } = await supabase.auth.getUser();
-
-            if (user) {
-                const { data, error } = await supabase
-                    .from("users") // Ensure your table name is correct
-                    .select("role")
-                    .eq("id", user.id) // Assuming "id" in profiles is the same as the user ID
-                    .single();
-
-                if (error) {
-                    console.error("Error fetching user role:", error);
-                } else {
-                    setRole(data.role);
-                }
+        const fetchProducts = async () => {
+            const { data, error } = await supabase
+                .from("marketplace") // Ensure table name is correct
+                .select("*");
+    
+            if (error) {
+                console.error("❌ Error fetching products:", error);
+            } else {
+                console.log("✅ Products fetched successfully:", data);
+                setProducts(data); // Ensure this updates state
             }
         };
-
-        fetchUserRole();
+    
+        fetchProducts();
     }, []);
+    
 
     return (
         <div className="text-black" >
@@ -101,7 +97,7 @@ const PasarJualBeli = () => {
                     <div className="grid grid-cols-3 gap-6 mt-7">
                         {products.length > 0 ? (
                             products.map((product) => (
-                                <Card key={product.id} />
+                                <Card key={product.id} product={product} />
                             ))
                         ) : (
                             <p className="text-center col-span-3 text-red-500">No products available.</p>
