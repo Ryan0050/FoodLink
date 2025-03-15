@@ -17,7 +17,7 @@ npm install
 ```
 make new file called .env.local inside ureekaProject
 
-repositort structture:
+repositort structure:
 ureekaProject/
 ├── .next/
 ├── node_modules/
