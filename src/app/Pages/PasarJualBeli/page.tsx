@@ -46,7 +46,7 @@ const PasarJualBeli = () => {
                 </Container>
             </div>
 
-            {isOpen ? (
+            {isOpen && localStorage.getItem("role") == "farmer" ? (
                 <div className="w-full min-h-screen bg-[#cfb394e1] fixed top-0 flex justify-center items-center">
                 <div className="modal bg-[#FEFAE1] p-8 rounded min-w-[45rem]">
                     <div className="modal-head flex justify-center">
