@@ -3,7 +3,7 @@ Our website provides a space for **farmers** to easily register, sell their prod
 ## Installation and Setup
 ## Step 1: Clone Repository
 ```
-git clone https://github.com/Ryan0050/ureekaProject.git![Screenshot 2025-03-15 210850](https://github.com/user-attachments/assets/213b506a-d951-49a5-8e34-ceb56ca9c34e)
+git clone https://github.com/Ryan0050/ureekaProject.git
 
 cd ureekaProject
 ```
