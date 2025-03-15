@@ -20,18 +20,23 @@ export default function Header() {
 
     return (
         <header className="sticky top-0 z-50 w-full bg-[#29361A] text-[#FCFAE1] flex items-center justify-between px-4 py-2">
-            <div className="w-[40%] flex items-center justify-between">
+            <div className="w-[40%] flex items-center gap-4">
                 <Link href="/">
-                    <div className="cursor-pointer">Logo</div>
-                </Link>
-                <Link href="/Pages/PasarJualBeli">
-                    <div className="cursor-pointer">Pasar Jual Beli</div>
-                </Link>
-                <Link href="/Pages/Perusahaan">
-                    <div className="cursor-pointer">Perusahaan</div>
+                    <div className="cursor-pointer bg-[#FCFAE1] rounded-xl">
+                        <img src={"/assets/logo.png"} className="w-30" alt="" />
+                    </div>
                 </Link>
             </div>
 
+            <div className="flex flex-row items-center gap-12">
+                <div className="flex gap-4">
+                    <Link href="/Pages/PasarJualBeli">
+                        <div className="cursor-pointer">Pasar Jual Beli</div>
+                    </Link>
+                    <Link href="/Pages/Perusahaan">
+                        <div className="cursor-pointer">Perusahaan</div>
+                    </Link>
+                </div>
             {!signedUp ? (
                 <Link href="/Pages/LoginRegis">
                     <div className="w-12.5 h-12.5 bg-[#FCFAE1] text-white flex items-center justify-center rounded-full cursor-pointer">
@@ -64,6 +69,7 @@ export default function Header() {
                     )}
                 </div>
             )}
+            </div>
         </header>
     );
 }
