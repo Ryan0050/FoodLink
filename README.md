@@ -19,7 +19,6 @@ make new file called .env.local
 
 repository structure:
 FoodLink/
-├── .next/
 ├── node_modules/
 ├── public/
 ├── src/
