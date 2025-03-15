@@ -1,7 +1,7 @@
 "use client";
 
 import Header from "@/app/Component/header";
-import CompanyCard from "@/app/Component/CompanyBlock";
+import Chatbox from "@/app/Component/chatbox";
 
 const Perusahaan = () => {
     return(
@@ -10,16 +10,10 @@ const Perusahaan = () => {
             <br></br>
             <br></br>
             <div className="flex justify-center items-center">
-                <CompanyCard />
+                <Chatbox />
             </div>
             <br></br>
-            <div className="flex justify-center items-center">
-                <CompanyCard />
-            </div>
             <br></br>
-            <div className="flex justify-center items-center">
-                <CompanyCard />
-            </div>
         </div>
         
     );

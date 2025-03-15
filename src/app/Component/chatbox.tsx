@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// fungsionalitas cuma belum konek ke profil/server sj
+import Link from "next/link";
 
 interface Message {
     id: number;
@@ -10,7 +10,7 @@ interface Message {
 
 const Chatbox: React.FC = () => {
     const [messages, setMessages] = useState<Message[]>([]);
-    const [role, setRole] = useState<"petani" | "pembeli">("pembeli"); // ini untuk skrng default ke pembeli tapi nanti tarik dari database profil
+    const [role, setRole] = useState<"petani" | "pembeli">("pembeli");
     const [input, setInput] = useState("");
 
     const sendMessage = () => {
@@ -49,7 +49,9 @@ const Chatbox: React.FC = () => {
                 <div className="flex items-center pb-3 border-b">
                 <img src="/assets/random.jpg" alt="User" className="w-12 h-12 rounded-full" />
                 <h2 className="ml-3 text-black font-bold">NAMA {role.toUpperCase()} <span className="text-gray-500">{role.toUpperCase()}</span></h2>
-                <button className="ml-auto bg-gray-200 px-4 py-1 rounded-full bg-white outline-gray-600 shadow-md text-gray-600">BACK</button> {/* Ini belum di link */}
+                <Link href="/Pages/PasarJualBeli" className="ml-auto bg-gray-200 px-4 py-1 rounded-full bg-white outline-gray-600 shadow-md text-gray-600">
+                    <button>BACK</button> {/* Ini belum di link */}
+                </Link>
                 </div>
 
                 {/* Warning Text */}

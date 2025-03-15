@@ -4,7 +4,7 @@ const CompanyCard = () => {
   return (
     <div className="border-2 border-green-700 rounded-lg p-4 bg-cream max-w-lg flex items-center gap-4 text-black">
       <img
-          src="/assets/random.jpg" // <-- path
+          src="/assets/company.png" // <-- path
           alt="Company Logo"
           className="w-24 h-24 rounded-lg object-cover"
       />

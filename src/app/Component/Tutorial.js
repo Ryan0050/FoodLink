@@ -5,17 +5,17 @@ const Tutorial = () => {
     {
       id: 1,
       title: "Pilih Produk yang Kalian Inginkan",
-      image: "/assets/random.jpg", // <-- path
+      image: "/assets/fruit.png", // <-- path
     },
     {
       id: 2,
       title: "Bayar Produk Kalian",
-      image: "/assets/random.jpg", // <-- path
+      image: "/assets/fruit.png", // <-- path
     },
     {
       id: 3,
       title: "Jemput Produk Kalian Langsung ke Petani",
-      image: "/assets/random.jpg", // <-- path
+      image: "/assets/fruit.png", // <-- path
     },
   ];
 
