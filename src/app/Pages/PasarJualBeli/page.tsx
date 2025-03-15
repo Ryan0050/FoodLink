@@ -23,20 +23,31 @@ type Profile = {
 const PasarJualBeli = () => {
     const [products, setProducts] = useState<Product[]>([]);
     const [role, setRole] = useState<string | null>(null);
-    useEffect(() => {
-        const fetchProducts = async () => {
-            const { data, error } = await supabase
-                .from("marketplace") // Adjust table name as needed
-                .select("*");
 
-            if (error) {
-                console.error("Error fetching products:", error);
+    useEffect(() => {
+        const fetchUserRole = async () => {
+            const { data, error } = await supabase.auth.getUser();
+            const user = data?.user;
+
+            if (user) {
+            const { data: userData, error: userError } = await supabase
+                .from("users") // ✅ Ensure this matches your table name
+                .select("role")
+                .eq("id", user.id) // ✅ Ensure "id" matches the column name in "users"
+                .single();
+
+            if (userError) {
+                console.error("❌ Error fetching user role:", userError);
             } else {
-                setProducts(data);
+                setRole(userData.role);
+                console.log("✅ User Role:", userData.role);
             }
+        } else {
+            console.warn("⚠️ No authenticated user found");
+        }
         };
 
-        fetchProducts();
+        fetchUserRole();
     }, []);
 
     useEffect(() => {
@@ -55,7 +66,6 @@ const PasarJualBeli = () => {
     
         fetchProducts();
     }, []);
-    
 
     return (
         <div className="text-black" >
@@ -63,10 +73,8 @@ const PasarJualBeli = () => {
             <Container>
             <div className="pt-8">
                     {/* Conditionally render UI based on role */}
-                    {role == "farmer" ? (
-                        <button className="bg-[#DEA160] font-bold p-4 rounded-lg cursor-pointer w-full">
-                            + Add Product
-                        </button>
+                    {role === "farmer" ? (
+                        <button className="bg-[#DEA160] font-bold p-4 rounded-lg cursor-pointer w-full">+ Add Product</button>
                     ) : (
                         <div className="search-bar text-white w-full flex gap-3 flex-row">
                             <div className="search flex flex-row w-full relative">
@@ -95,13 +103,7 @@ const PasarJualBeli = () => {
 
                     {/* Display Products */}
                     <div className="grid grid-cols-3 gap-6 mt-7">
-                        {products.length > 0 ? (
-                            products.map((product) => (
-                                <Card key={product.id} product={product} />
-                            ))
-                        ) : (
-                            <p className="text-center col-span-3 text-red-500">No products available.</p>
-                        )}
+                        <Card />
                     </div>
                 </div>
             </Container>
