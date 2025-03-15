@@ -8,9 +8,9 @@ export default function Home() {
       <Header /> 
       
       <div className="h-[calc(95vh-73px)] bg-[#29361A] relative"> 
-        <div className='h-[50%] flex flex-col justify-end items-center'>
-            <h1 className='text-4xl'>Beli langsung dari petani</h1>
-            <h1 className='text-4xl'>Terjamin kesegarannya</h1>
+        <div className='h-[50%] flex flex-col justify-end items-center gap-2'>
+            <h1 className='text-7xl font-semibold'>Beli langsung dari petani</h1>
+            <h1 className='text-4xl font-light'>Terjamin kesegarannya</h1>
         </div>
         <div className='h-[50%]'>
           <Image
