@@ -3,7 +3,8 @@ Our website provides a space for **farmers** to easily register, sell their prod
 ## Installation and Setup
 ## Step 1: Clone Repository
 ```
-git clone https://github.com/Ryan0050/ureekaProject.git
+git clone https://github.com/Ryan0050/ureekaProject.git![Screenshot 2025-03-15 210850](https://github.com/user-attachments/assets/213b506a-d951-49a5-8e34-ceb56ca9c34e)
+
 cd ureekaProject
 ```
 
@@ -12,7 +13,27 @@ cd ureekaProject
 npm install
 ```
 
-## Step 3: Run the code
+## Step 3: Add New File
+```
+make new file called .env.local inside ureekaProject
+
+repositort structture:
+ureekaProject/
+├── .next/
+├── node_modules/
+├── public/
+├── src/
+└── .env.local
+```
+
+## Step 4: Connect To Database
+```
+at.env.local add this text:
+NEXT_PUBLIC_SUPABASE_URL=https://wpeqzyeulfyosmxngias.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6IndwZXF6eWV1bGZ5b3NteG5naWFzIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDEwNzI5ODcsImV4cCI6MjA1NjY0ODk4N30.WtnEMMrGWoe6US223cRb2Sped3FZMzudSs71Cmyr0Vo
+```
+
+## Step 5: Run The Code
 ```
 npm run dev
 ```
