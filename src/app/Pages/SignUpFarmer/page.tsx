@@ -3,6 +3,7 @@
 import { useState } from "react";
 import {supabase} from "@/lib/supabase"; // Ensure you have initialized Supabase in src/lib/supabase.ts
 import Header from "@/app/Component/header";
+import Footer from "@/app/Component/footer";
 import Link from "next/link";
 import { useAuth } from "@/context/authContext";
 import { useRouter } from "next/navigation";
@@ -106,7 +107,10 @@ const SignUpFarmer = () => {
                     </div>
                 </div>
             </div>
-            
+            <div className="flex flex-col min-h-screen">
+                <main className="flex-grow">{/* Main content here */}</main>
+                <Footer />
+            </div>
         </form>
     );
 };

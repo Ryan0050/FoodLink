@@ -1,6 +1,7 @@
 "use client";
 
 import Header from "@/app/Component/header";
+import Footer from "@/app/Component/footer";
 import Image from "next/image";
 import Link from "next/link";
 import { useState, useEffect } from "react";
@@ -263,6 +264,10 @@ const ProfileFarmer = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="flex flex-col min-h-screen">
+                <main className="flex-grow">{/* Main content here */}</main>
+                <Footer />
             </div>
         </div>
     );

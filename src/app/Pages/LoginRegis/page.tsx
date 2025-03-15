@@ -1,6 +1,7 @@
 "use client";
 
 import Header from "@/app/Component/header";
+import Footer from "@/app/Component/footer";
 import Link from "next/link";
 import { useState } from "react";
 import {supabase}from "@/lib/supabase"; // Ensure Supabase is initialized
@@ -124,6 +125,10 @@ const LoginRegis = () => {
                         </div>
                     </div>
                 </div>
+            </div>
+            <div className="flex flex-col min-h-screen">
+                <main className="flex-grow">{/* Main content here */}</main>
+                <Footer />
             </div>
         </div>
     );

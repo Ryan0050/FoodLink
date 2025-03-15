@@ -5,6 +5,7 @@ import { supabase } from "@/lib/supabase";
 import Card from "@/app/Component/Card";
 import Container from "@/app/Component/Container";
 import Header from "@/app/Component/header";
+import Footer from "@/app/Component/footer";
 
 type Product = {
     id: number;
@@ -107,6 +108,10 @@ const PasarJualBeli = () => {
                     </div>
                 </div>
             </Container>
+            <div className="flex flex-col min-h-screen">
+                <main className="flex-grow">{/* Main content here */}</main>
+                <Footer />
+            </div>
         </div>
     );
 };
